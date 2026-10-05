@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+</head>
+<body>
+
+    <h1>Add Employee</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <input type="text" value="{{employee.name}}" name="name" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" value="{{employee.email}}" name="email" required>
+        <br><br>
+
+        <label>Phone:</label>
+        <input type="text" value="{{employee.phone}}" name="phone" required>
+        <br><br>
+
+        <label>Department:</label>
+        <input type="text" value="{{employee.department}}" name="department" required>
+        <br><br>
+
+        <label>Joining Date:</label>
+        <input type="date" value="{{employee.joining_date|date:'Y-m-d'}}" name="joining_date" required>
+        <br><br>
+
+        <button type="submit">
+            {% if employee %}
+            Update_employee
+            {% else %}
+            edit employee
+            {%endif%}
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/employees/">Back to Employees</a>
+
+</body>
+</html>

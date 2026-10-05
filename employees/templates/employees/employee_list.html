@@ -1,13 +1,20 @@
+{% load static %}
+<!-- {% load static %} -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Employees</title>
+    <link rel="stylesheet" href="{% static 'employees/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'employees/style.css' %}"> -->
 </head>
 <body>
 
     <h1>Employee Management System</h1>
 
     <h2>Employees</h2>
+    <a href="{% url 'add_employee' %}">add Employee</a>
+    
 
     {% if employees %}
         <ul>
@@ -17,6 +24,9 @@
                     {{ employee.email }} -
                     {{ employee.department }}
                 </li>
+
+                <a href="{% url 'edit_employee' employee.id %}">edit_employee</a>
+                <a href="{% url 'delete_employee' employee.id %}">delete_emploee</a>
             {% endfor %}
         </ul>
     {% else %}
