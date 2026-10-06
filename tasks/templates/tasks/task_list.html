@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Management</title>
+</head>
+
+<body>
+
+    <h1>Task Management System</h1>
+
+    <a href="#">Add Task</a>
+
+    <h2>Tasks</h2>
+    
+    {% if tasks %}
+
+        <table style="border:1">
+
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Assigned To</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for task in tasks %}
+
+                    <tr>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.assigned_to }}</td>
+                        <td>{{ task.priority }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.due_date }}</td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    {% else %}
+
+        <p>No tasks found.</p>
+
+    {% endif %}
+
+</body>
+</html>

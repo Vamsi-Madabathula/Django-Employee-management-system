@@ -19,9 +19,9 @@ class Tasks(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    assigined_to = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    assigned_to = models.ForeignKey(Employee, on_delete=models.CASCADE)
     priority = models.CharField(max_length=20 , choices=PRIORITY_CHOICES ,default='Medium')
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pending')
     due_date = models.DateField()
 
     def __str__(self):
