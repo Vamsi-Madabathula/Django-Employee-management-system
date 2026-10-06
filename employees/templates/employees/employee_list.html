@@ -13,25 +13,43 @@
     <h1>Employee Management System</h1>
 
     <h2>Employees</h2>
-    <a href="{% url 'add_employee' %}">add Employee</a>
-    
+    <a href="{% url 'add_employee' %}" class="add-btm">Add Employee</a>
+   <table >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Department</th>
+                <th>Edit & Delete</th>
+           
+            </tr>
+        </thead>
+        <tbody>
 
-    {% if employees %}
-        <ul>
+       
+        {% if employees %}
+     
             {% for employee in employees %}
-                <li>
-                    {{ employee.name }} -
-                    {{ employee.email }} -
-                    {{ employee.department }}
-                </li>
+                <tr>
+                 <td>   {{ employee.name }} -</td>
+                    <td>{{ employee.email }} -</td>
+                   <td> {{ employee.department }}</td>
+                
 
-                <a href="{% url 'edit_employee' employee.id %}">edit_employee</a>
-                <a href="{% url 'delete_employee' employee.id %}">delete_emploee</a>
+            
+                <td><a href="{% url 'edit_employee' employee.id %}" class="edit-btm">edit_employee</a>
+                <a href="{% url 'delete_employee' employee.id %}" class="delete-btm"  onclick=" return confirm('are you sure you wnat to delete {{employee.name}} employee?')">delete_emploee</a></td>
             {% endfor %}
-        </ul>
-    {% else %}
+       
+         {% else %}
         <p>No employees found.</p>
-    {% endif %}
+         {% endif %}
+        
+         </tr>
+         </tbody>
+   </table> 
+
+   
 
 </body>
 </html>

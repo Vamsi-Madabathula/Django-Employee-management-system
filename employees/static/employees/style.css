@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
-    background-color: red;
+    background-color: yellow;
 
 }
 
@@ -18,4 +18,28 @@ a {
 button {
     padding: 8px 15px;
     cursor: pointer;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.add-btm{
+    padding: 6px 10px;
+
+background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+.edit-btm{
+    padding: 6px 10px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 4px;
+}
+.delete-btm {
+    padding: 6px 10px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 4px;
 }
