@@ -206,6 +206,8 @@ Then embed them in this README:
 ![Project Screenshot](screenshorts/tasks_List.png)
 
 
+![Project Screenshot](add_employee.png)
+
 
 ## Author
 
