@@ -203,7 +203,7 @@ Then embed them in this README:
 ![Project Screenshot](screenshorts/employeee_list.png)
 
 
-![Project Screenshot](screenshorts/tasks_list.png)
+![Project Screenshot](screenshorts/tasks_List.png)
 
 
 
