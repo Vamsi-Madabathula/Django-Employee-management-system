@@ -200,12 +200,11 @@ For example, create a `screenshots/` folder in the repository and add images suc
 
 Then embed them in this README:
 
-
-![Employee List](screenshots/employee_list.png)
-![Task List](screenshots/tasks_List.png)
-
-![Employee Management](screenshots/employeee_list.png)
 ![Project Screenshot](screenshorts/employeee_list.png)
+
+
+![Project Screenshot](screenshorts/tasks_list.png)
+
 
 
 ## Author
