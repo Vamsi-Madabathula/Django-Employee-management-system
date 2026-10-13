@@ -204,7 +204,7 @@ Then embed them in this README:
 ![Employee List](screenshots/employee_list.png)
 ![Task List](screenshots/tasks_List.png)
 
-![Employee Management](screenshots/employee_list.png)
+![Employee Management](screenshots/employeee_list.png)
 
 ## Author
 
