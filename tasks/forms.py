@@ -14,7 +14,7 @@ class TaskForm(forms.ModelForm):
 
             # Specify which fields users can fill in.
             fields = [ 
-                        "titel",
+                        "title",
                         "description",
                         "assigned_to",
                         "priority",

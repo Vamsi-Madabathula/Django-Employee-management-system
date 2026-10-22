@@ -8,7 +8,7 @@
 
     <h1>Task Management System</h1>
 
-    <a href="#">Add Task</a>
+    <a href="{% url 'task_create' %}">Add Task</a>
 
     <h2>Tasks</h2>
     
@@ -24,6 +24,8 @@
                     <th>Priority</th>
                     <th>Status</th>
                     <th>Due Date</th>
+                    <th>EDIT_TASK</th>
+                    <th>DELETE_TASK</th>
                 </tr>
             </thead>
 
@@ -38,6 +40,8 @@
                         <td>{{ task.priority }}</td>
                         <td>{{ task.status }}</td>
                         <td>{{ task.due_date }}</td>
+                        <td> <a href="{% url 'task_update' task.id %}">EDIT_task</a></td>
+                        <td><a href="{% url 'task_delete' task.id %}">Delete_task</a></td>
                     </tr>
 
                 {% endfor %}
