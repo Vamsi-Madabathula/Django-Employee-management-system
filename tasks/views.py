@@ -69,7 +69,7 @@ def task_delete(request, id):
         #deletes the selected task from the database
         task.delete()
         # returns to the task list
-        return redirect('tasks')#tasks_list
+        return redirect('tasks_list')#tasks_list
     # display the confirmation page before deletion
     return render(
         request,
