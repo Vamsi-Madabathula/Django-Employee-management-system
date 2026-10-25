@@ -208,6 +208,8 @@ Then embed them in this README:
 
 ![Project Screenshot](add_employee.png)
 
+![Project Screenshot](add_employee.png)
+
 
 ## Author
 
