@@ -1,14 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render ,redirect
 from .models import Employee
 # Create your views here.
-
+@login_required
 def employee_list(request):
     employees = Employee.objects.all()
 
     return render(request,'employees/employee_list.html', {
         'employees' : employees
     })
-
+@login_required
 def add_employee(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -28,7 +29,7 @@ def add_employee(request):
         return redirect('employee_list')
     # HERE BELOWLINE WE ARE NOT SENDING employee OBJECT TO TEMPLATE SO THE DATA WILL NOT DISPLAYED
     return render(request,'employees/employee_form.html')
-
+@login_required
 def edit_employee(request,id):
 
     employee = Employee.objects.get(id=id)
@@ -47,7 +48,7 @@ def edit_employee(request,id):
     return render(request, 'employees/employee_form.html',{
         'employee' : employee
     })
-
+@login_required
 def delete_employee(request,id):
     employee = Employee.objects.get(id=id)
     employee.delete()
