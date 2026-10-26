@@ -5,6 +5,11 @@
 </head>
 
 <body>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">LogOut</button>
+    </form>
+
 
     <h1>Task Management System</h1>
 
