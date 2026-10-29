@@ -11,6 +11,7 @@ def tasks_list(request):
 
     # render used to display the HTML page
     return render(request,'tasks/task_list.html',{
+        
         'tasks' : tasks
     })
 
