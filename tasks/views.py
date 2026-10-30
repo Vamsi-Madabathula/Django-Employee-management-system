@@ -1,11 +1,13 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+# from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tasks
 from .forms import TaskForm
 
 # Create your views here.
 # Display all tasks
-@login_required # when the user login then the task_list will displayed
+# @login_required # when the user login then the task_list will displayed
+@permission_required('tasks.view_tasks', raise_exception=True)
 def tasks_list(request):
     tasks = Tasks.objects.all()
 
@@ -17,7 +19,8 @@ def tasks_list(request):
 
 
 # Create a new task
-@login_required # when the user login then the task_create will displayed
+# @login_required # when the user login then the task_create will displayed
+@permission_required('tasks.add_tasks', raise_exception=True)
 def task_create(request):
 
 
@@ -45,7 +48,8 @@ def task_create(request):
     })
 
 #create task update 
-@login_required # when the user login then the task_update will displayed
+# @login_required # when the user login then the task_update will displayed
+@permission_required('tasks.change_tasks', raise_exception=True)
 def task_update(request, id):
     #finds the task by its ID; returns a 404 page if it doesn't exit.
     task = get_object_or_404(Tasks,id=id)
@@ -66,7 +70,8 @@ def task_update(request, id):
 
 
 #created the tass_deleted views
-@login_required # when the user login then the task_delete will displayed
+# @login_required # when the user login then the task_delete will displayed
+@permission_required('tasks.delete_tasks', raise_exception=True)
 def task_delete(request, id):
     # finds the task or return 404 respose
     task = get_object_or_404(Tasks,id=id)
